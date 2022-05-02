@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Card from 'react-bootstrap/Card';
 
 import { mapResponseToMeal } from '../helpers'
 
@@ -29,9 +30,13 @@ const RandomMeal = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Random Meal</h1>
-      <h2>{meal.mealName}</h2>
+    <Card>
+      <Card.Header>
+        <Card.Title>
+          Random Meal
+        </Card.Title>
+        <Card.Subtitle>{meal.mealName}</Card.Subtitle>
+      </Card.Header>
       <ul>
         {meal.ingredients.map((ingredient, index) => {
           return (<li key={index}>{ingredient.measure} {ingredient.ingredient}</li>)
@@ -39,7 +44,7 @@ const RandomMeal = () => {
       </ul>
       <h3>Instructions</h3>
       <p>{meal.instructions}</p>
-    </div>
+    </Card>
   )
 }
 
