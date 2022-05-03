@@ -29,7 +29,7 @@ function SearchBar () {
             .get(`https://www.themealdb.com/api/json/v1/1/categories.php`)
             .then(res => {
                 setCategoryList(res.data.categories)
-                console.log(res)
+                setSelectMealList([])
             })
             .catch(err => {
                 console.log ({err})
@@ -50,6 +50,7 @@ function SearchBar () {
         axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${form.name}`)
                 .then(res => {
                     setSelectMealList(res.data.meals)
+                    setCategoryList([])
                     console.log(res)
                 })
                 .catch(err => {
@@ -62,7 +63,7 @@ function SearchBar () {
             return id===meal.id
         })
          )
-        // console.log(selectMealid)
+         console.log('working')
     }
     console.log (selectMeal)
 
