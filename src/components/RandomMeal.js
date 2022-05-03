@@ -13,7 +13,8 @@ const initialMeal = {
   ingredients: [],
   source: "",
   tags: [],
-  youtubeLink: ""
+  youtubeLink: "",
+  thumbnail: ""
 }
 
 const RandomMeal = () => {
@@ -37,13 +38,16 @@ const RandomMeal = () => {
         </Card.Title>
         <Card.Subtitle>{meal.mealName}</Card.Subtitle>
       </Card.Header>
-      <ul>
-        {meal.ingredients.map((ingredient, index) => {
-          return (<li key={index}>{ingredient.measure} {ingredient.ingredient}</li>)
-        })}
-      </ul>
-      <h3>Instructions</h3>
-      <p>{meal.instructions}</p>
+      <Card.Body>
+        <Card.Img src={`${meal.thumbnail}/preview`} />
+        <ul>
+          {meal.ingredients.map((ingredient, index) => {
+            return (<li key={index}>{ingredient.measure} {ingredient.ingredient}</li>)
+          })}
+        </ul>
+        <h3>Instructions</h3>
+        <p>{meal.instructions}</p>
+      </Card.Body>
     </Card>
   )
 }
