@@ -4,7 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import SearchBar from './Search';
 import RandomMeal from './RandomMeal';
-import Sources from './SourcePage'
+import Sources from './SourcePage';
+import Ingredients from './Ingredients'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <RandomMeal />
       <SearchBar />
       <Sources />
+      <Ingredients />
     </div>
   );
 }
