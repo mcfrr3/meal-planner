@@ -1,5 +1,6 @@
 import logo from '../logo.svg';
 import '../App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import SearchBar from './Search';
 import RandomMeal from './RandomMeal';
@@ -7,8 +8,10 @@ import RandomMeal from './RandomMeal';
 function App() {
   return (
     <div className="App">
-      <RandomMeal />
-      <SearchBar/>
+      <div className='container'>
+        <RandomMeal />
+        <SearchBar/>
+      </div>
     </div>
   );
 }
