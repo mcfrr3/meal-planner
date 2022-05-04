@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import SearchByName from "./SearchByName";
 
 const initialForm = {
   name: "",
@@ -8,18 +7,13 @@ const initialForm = {
   area: "",
   searchType: "",
 };
-let data;
 let id = 0;
-
 const getId = () => ++id;
 
 function SearchBar() {
   const [form, setForm] = useState(initialForm);
   const [list, setList] = useState([]);
-  const [categoryList, setCategoryList] = useState([]);
-  const [areaList, setAreaList] = useState([]);
-  const [selectMealList, setSelectMealList] = useState([]);
-  const [selectMeal, setSelectMeal] = useState([]);
+
 
   const onChange = (e) => {
     const { name, value } = e.target;
