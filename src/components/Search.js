@@ -108,7 +108,7 @@ function SearchBar() {
       <ul>
         {form.searchType === "name" &&
           list.map((meal) =>{ return (
-            <Card>
+            <Card className = 'search-cards'>
             <Card.Header>
               <Card.Title>
                 {meal.strMeal}
@@ -120,19 +120,21 @@ function SearchBar() {
           )}
         {form.searchType === "category" &&
           list.map((cat) => { return (
-            <Card key ={cat.idCategory}>
+            <div className = 'search-cards'>
+            <Card >
             <Card.Header>
-              <Card.Title>
+              <Card.Title  key ={cat.idCategory}>
                 {cat.strCategory}
               </Card.Title>
               <Card.Subtitle></Card.Subtitle>
             </Card.Header>
             </Card>
+            </div>
           )}
           )}
         {form.searchType === "area" &&
           list.map((place) => { return (
-            <Card key ={getId}>
+            <Card className = 'search-cards' key ={getId}>
             <Card.Header>
               <Card.Title>
                 {place.strArea}
