@@ -2,6 +2,7 @@ import logo from '../logo.svg';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import SearchBar from './Search';
 import RandomMeal from './RandomMeal';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <div className="App">
       <div className='container'>
         <RandomMeal />
+        <SearchBar/>
       </div>
     </div>
   );
