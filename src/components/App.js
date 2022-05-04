@@ -1,12 +1,16 @@
 import logo from '../logo.svg';
 import '../App.css';
 
+// import SearchBar from './Search';
 import RandomMeal from './RandomMeal';
+import Sources from './SourcePage'
 
 function App() {
   return (
     <div className="App">
       <RandomMeal />
+      {/* <SearchBar /> */}
+      <Sources />
     </div>
   );
 }
