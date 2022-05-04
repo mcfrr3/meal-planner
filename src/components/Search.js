@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Card from 'react-bootstrap/Card'
 
 const initialForm = {
   name: "",
@@ -71,15 +72,6 @@ function SearchBar() {
         })
   }
 
-  // const mealSelection =(id) => {
-  //     setSelectMeal(selectMealList.filter(meal => {
-  //         return id===meal.id
-  //     })
-  //      )
-  //      console.log('working')
-  // }
-  // console.log (selectMeal)
-
   return (
     <div className="search-component">
       <form onSubmit={onSubmit}>
@@ -115,11 +107,41 @@ function SearchBar() {
 
       <ul>
         {form.searchType === "name" &&
-          list.map((meal) => <li key={meal.idMeal}>{meal.strMeal}</li>)}
+          list.map((meal) =>{ return (
+            <Card>
+            <Card.Header>
+              <Card.Title>
+                {meal.strMeal}
+              </Card.Title>
+              <Card.Subtitle></Card.Subtitle>
+            </Card.Header>
+            </Card>
+          )}
+          )}
         {form.searchType === "category" &&
-          list.map((cat) => <li onClick = {categorySearch(cat.strCategory)} key={cat.idCategory}>{cat.strCategory}</li>)}
+          list.map((cat) => { return (
+            <Card key ={cat.idCategory}>
+            <Card.Header>
+              <Card.Title>
+                {cat.strCategory}
+              </Card.Title>
+              <Card.Subtitle></Card.Subtitle>
+            </Card.Header>
+            </Card>
+          )}
+          )}
         {form.searchType === "area" &&
-          list.map((place) => <li key={getId}> {place.strArea}</li>)}
+          list.map((place) => { return (
+            <Card key ={getId}>
+            <Card.Header>
+              <Card.Title>
+                {place.strArea}
+              </Card.Title>
+              <Card.Subtitle></Card.Subtitle>
+            </Card.Header>
+            </Card>
+          )}
+          )}
       </ul>
     </div>
   );
