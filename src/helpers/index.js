@@ -17,6 +17,7 @@ export const mapResponseToMeal = mealResponse => {
     ingredients: ingredients,
     source: mealResponse.strSource,
     tags: mealResponse.strTags,
-    youtubeLink: mealResponse.strYoutube
+    youtubeLink: mealResponse.strYoutube,
+    thumbnail: mealResponse.strMealThumb
   }
 }
