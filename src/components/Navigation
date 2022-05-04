@@ -1,0 +1,14 @@
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
+
+const Navigation = () => {
+  return (
+    <Navbar expand="lg">
+      <Container>
+
+      </Container>
+    </Navbar>
+  )
+}
+
+export default Navigation;
