@@ -40,6 +40,10 @@ const RandomMeal = () => {
       </Card.Header>
       <Card.Img variant="top" src={`${meal.thumbnail}/preview`} />
       <Card.Body>
+<<<<<<< HEAD
+=======
+        <Card.Img class="img-thumbnail" src={`${meal.thumbnail}/preview`} />
+>>>>>>> Mike
         <ul>
           {meal.ingredients.map((ingredient, index) => {
             return (<li key={index}>{ingredient.measure} {ingredient.ingredient}</li>)
