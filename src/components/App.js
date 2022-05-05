@@ -12,8 +12,8 @@ import SearchBar from './Search';
 import RandomMeal from './RandomMeal';
 import Sources from './SourcePage';
 import Ingredients from './Ingredients'
-import categorySearch from './CategorySearch';
 import CategorySearch from './CategorySearch'
+import AreaSearch from './AreaSearch'
 
 function App() {
 
@@ -24,7 +24,8 @@ function App() {
         <Navigation />
           <Routes>
             <Route path='/' element={<RandomMeal />} />
-            <Route path='categories' element={<categorySearch />} />
+            <Route path='/categories' element={<CategorySearch />}/>
+            <Route path='/areas' element={<AreaSearch />} />
             {/* <SearchBar /> */}
             {/* <Sources /> */}
             {/* <Ingredients /> */}

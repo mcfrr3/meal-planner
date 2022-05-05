@@ -44,7 +44,7 @@ const RandomMeal = () => {
           </Card.Title>
           <Card.Subtitle>{meal.mealName}</Card.Subtitle>
         </Card.Header>
-        <Card.Img variant="top" src={`${meal.thumbnail}/preview`} />
+        <Card.Img class= "img img-thumbnail" variant="top" src={`${meal.thumbnail}`} />
         <Card.Body>
           <ul>
             {meal.ingredients.map((ingredient, index) => {
