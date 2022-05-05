@@ -7,6 +7,8 @@ const Navigation = () => {
     <Navbar expand="lg">
       <Container>
         <Link to="/">Random Meal</Link>
+        <Link to = 'categories'> Category Search</Link>
+        <Link to = '/areas'>Area Search</Link>
       </Container>
     </Navbar>
   )
