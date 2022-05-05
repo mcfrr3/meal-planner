@@ -20,17 +20,29 @@ function AreaSearch() {
     })
 }, [])
 // console.log(areas)
+
+    const areaSearch =(area) => {
+        axios
+        .get(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${area}`)
+        .then(res => {
+            console.log(res)
+        })
+        .catch(err => {
+            console.log({err})
+        })
+    }
     
     return(
         <div>
             <h1>Area Search</h1>
             <div className='searchList'>
             {
-                areas.map(area => 
+                areas.map((area, index) => 
                     <a 
-                    key = {idArray.forEach(item => `${Date.now()+item}`)}
+                    onClick = {() => areaSearch(area.strArea)}
+                    key = {area[index]}
                     className = 'individualLink' 
-                    href ='' >{area.strArea}</a>
+                    href ='#areaList' >{area.strArea}</a>
                 )
             }
             </div>

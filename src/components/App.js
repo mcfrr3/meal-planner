@@ -18,6 +18,7 @@ import CategorySearch from './CategorySearch'
 function App() {
 
   return (
+<<<<<<< Updated upstream
     <BrowserRouter>
       <div className="App">
         <Container>
@@ -32,6 +33,17 @@ function App() {
         </Container>
       </div>
     </BrowserRouter>
+=======
+    <div className="App">
+      <Navigation />
+      <RandomMeal />
+      <SearchBar />
+      <Sources />
+      <Ingredients />
+      <AreaSearch />
+      <CategorySearch path = '/#categoryList' />
+    </div>
+>>>>>>> Stashed changes
   );
 }
 
