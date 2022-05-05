@@ -13,6 +13,7 @@ import RandomMeal from './RandomMeal';
 import Sources from './SourcePage';
 import Ingredients from './Ingredients'
 import categorySearch from './CategorySearch';
+import CategorySearch from './CategorySearch'
 
 function App() {
 

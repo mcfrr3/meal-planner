@@ -2,10 +2,12 @@ import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 
 //create a grid of links for all the areas.
-
+const idArray = Array.from(Array(27).keys())
+// console.log (idArray)
 
 function AreaSearch() {
     const [areas, setAreas] = useState([])
+    const [chosenArea, setChosenArea] = useState([])
 
     useEffect(() => {
         axios
@@ -15,12 +17,23 @@ function AreaSearch() {
         })
         .catch((err) => {
           console.log({ err });
-    }, [])
-})
+    })
+}, [])
+// console.log(areas)
     
     return(
         <div>
-
+            <h1>Area Search</h1>
+            <div className='searchList'>
+            {
+                areas.map(area => 
+                    <a 
+                    key = {idArray.forEach(item => `${Date.now()+item}`)}
+                    className = 'individualLink' 
+                    href ='' >{area.strArea}</a>
+                )
+            }
+            </div>
         </div>
     )
 }
