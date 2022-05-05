@@ -28,6 +28,11 @@
   color: #61dafb;
 }
 
+.img{
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  
 .searchList a{
   display: flex;
   flex-direction: row;
@@ -46,11 +51,14 @@
 }
 
 .categoryList{
-  height: 20%;
-  width: 20%;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
+}
 
+.categoryMeals{
+  width: 20%;
+  padding: 1%;
 }
 
 @keyframes App-logo-spin {

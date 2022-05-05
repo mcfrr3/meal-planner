@@ -35,6 +35,7 @@ const RandomMeal = () => {
   }, []);
 
   return (
+
     <Card>
       <Card.Header>
         <Card.Title>
