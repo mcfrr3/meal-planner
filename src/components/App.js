@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Container from 'react-bootstrap/Container';
-import '../App.css';
 import logo from '../logo.svg';
+import '../App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Container from 'react-bootstrap/Container'
 
 import Navigation from './Navigation';
 import SearchBar from './Search';
@@ -18,7 +17,7 @@ import AreaSearch from './AreaSearch'
 function App() {
 
   return (
-    <BrowserRouter>
+          <BrowserRouter>
       <div className="App">
         <Container>
         <Navigation />

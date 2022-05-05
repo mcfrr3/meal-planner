@@ -9,6 +9,7 @@ const Navigation = () => {
         <Link to="/">Random Meal</Link>
         <Link to="/categories">Categories</Link>
         <Link to="/areas">Areas</Link>
+
       </Container>
     </Navbar>
   )

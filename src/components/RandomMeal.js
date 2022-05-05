@@ -35,27 +35,26 @@ const RandomMeal = () => {
   }, []);
 
   return (
-    <>
-      {/* <button onClick={fetchRandomMeal}>Generate a new meal</button> */}
-      <Card>
-        <Card.Header>
-          <Card.Title>
-            Random Meal
-          </Card.Title>
-          <Card.Subtitle>{meal.mealName}</Card.Subtitle>
-        </Card.Header>
-        <Card.Img class= "img img-thumbnail" variant="top" src={`${meal.thumbnail}`} />
-        <Card.Body>
-          <ul>
-            {meal.ingredients.map((ingredient, index) => {
-              return (<li key={index}>{ingredient.measure} {ingredient.ingredient}</li>)
-            })}
-          </ul>
-          <h3>Instructions</h3>
-          <p>{meal.instructions}</p>
-        </Card.Body>
-      </Card>
-    </>
+
+    <Card>
+      <Card.Header>
+        <Card.Title>
+          Random Meal
+        </Card.Title>
+        <Card.Subtitle>{meal.mealName}</Card.Subtitle>
+      </Card.Header>
+      <Card.Img variant="top" src={`${meal.thumbnail}/preview`} />
+      <Card.Body>
+        <Card.Img class="img-thumbnail" src={`${meal.thumbnail}/preview`} />
+        <ul>
+          {meal.ingredients.map((ingredient, index) => {
+            return (<li key={index}>{ingredient.measure} {ingredient.ingredient}</li>)
+          })}
+        </ul>
+        <h3>Instructions</h3>
+        <p>{meal.instructions}</p>
+      </Card.Body>
+    </Card>
   )
 }
 
