@@ -23,7 +23,7 @@ function SearchBar() {
       [name]: value,
     });
   };
-  console.log(form);
+//   console.log(form);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -59,7 +59,7 @@ function SearchBar() {
         });
     }
   };
-  console.log(list);
+//   console.log(list);
 
   const categorySearch =(strCategory) => {
       axios 
@@ -107,16 +107,8 @@ function SearchBar() {
 
       <ul>
         {form.searchType === "name" &&
-          list.map((meal) =>{ return (
-            <Card className = 'search-cards'>
-            <Card.Header>
-              <Card.Title>
-                {meal.strMeal}
-              </Card.Title>
-              <Card.Subtitle></Card.Subtitle>
-            </Card.Header>
-            </Card>
-          )}
+          list.map((meal) => 
+              <a href ='' >{meal.strMeal}</a>
           )}
         {form.searchType === "category" &&
           list.map((cat) => { return (

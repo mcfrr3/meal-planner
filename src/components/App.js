@@ -8,6 +8,8 @@ import SearchBar from './Search';
 import RandomMeal from './RandomMeal';
 import Sources from './SourcePage';
 import Ingredients from './Ingredients'
+import AreaSearch from './AreaSearch';
+import CategorySearch from './CategorySearch'
 
 function App() {
 
@@ -17,6 +19,8 @@ function App() {
       <SearchBar />
       <Sources />
       <Ingredients />
+      <AreaSearch />
+      <CategorySearch />
     </div>
   );
 }
