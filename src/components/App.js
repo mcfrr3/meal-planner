@@ -28,9 +28,9 @@ function App() {
   const mealChoice = (mealId) => {
     <Navigate to = {`/meals/${mealId}`}/>
     axios
-      .get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
-      .then((res) => {
-        setChosenMeal(mapResponseToMeal(res.data.meals[0]));
+    .get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
+    .then((res) => {
+      setChosenMeal(mapResponseToMeal(res.data.meals[0]));
       })
       .catch((err) => {
         console.log({ err });
@@ -60,8 +60,10 @@ function App() {
             title = {title}
             setTitle = {setTitle}
             />} />
+            <Route path='/meals' element={<RandomMeal />} />
             <Route path = {`/meals/:id`} element = {<MealChoice 
             chosenMeal = {chosenMeal}
+            mealChoice = {mealChoice}
             /> }/>
             {/* <SearchBar /> */}
             {/* <Sources /> */}
