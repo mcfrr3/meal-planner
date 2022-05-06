@@ -1,31 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "react-bootstrap/Card";
-import { mapResponseToMeal } from "../helpers";
+import {initialMealChoice} from '../helpers/initialMealChoice'
 
-//create a grid of links for all the categories.
 
-/* ISSUES
-1. need to double click a category to get the thumbnails to repopulate.
-*/
-
-const initialMealChoice = {
-    mealId: "",
-    mealName: "",
-    instructions: [],
-    area: "",
-    category: "",
-    ingredients: [],
-    source: "",
-    tags: [],
-    youtubeLink: "",
-    thumbnail: ""
-  }
-function CategorySearch() {
+function CategorySearch(props) {
   const [categories, setCategories] = useState([]);
   const [categoryList, setCategoryList] = useState([]);
-  const [chosenMeal, setChosenMeal] = useState(initialMealChoice);
 
+  const {mealChoice, chosenMeal, setChosenMeal, title, setTitle} = props
   useEffect(() => {
     axios
       .get("https://www.themealdb.com/api/json/v1/1/categories.php")
@@ -38,30 +21,22 @@ function CategorySearch() {
   }, []);
 
   const categoryChoice = (category) => {
+    setTitle(category.strCategory)
     axios
       .get(
         `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category.strCategory}`
       )
       .then((res) => {
         setCategoryList(res.data.meals);
+        setChosenMeal(initialMealChoice)
       })
       .catch((err) => {
         console.log({ err });
       });
   };
-
-  const mealChoice = (idMeal) => {
-    axios
-      .get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`)
-      .then((res) => {
-        setChosenMeal(mapResponseToMeal(res.data.meals[0]));
-      })
-      .catch((err) => {
-        console.log({ err });
-      });
-  };
-
-  console.log(chosenMeal);
+console.log(categories)
+console.log(categoryList)
+console.log(chosenMeal)
   return (
     <div>
       <h1>Category Search</h1>
@@ -79,6 +54,9 @@ function CategorySearch() {
           );
         })}
       </div>
+        <div>
+        <h2>{title}</h2>
+        </div>
       {categoryList && (
         <div className="categoryList">
           {categoryList.map((meal) => {
