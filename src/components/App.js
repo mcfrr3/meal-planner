@@ -25,10 +25,10 @@ function App() {
 
 
 
-  const mealChoice = (meal) => {
-    <Navigate to = {`/meals/${meal.idMeal}`}/>
+  const mealChoice = (mealId) => {
+    <Navigate to = {`/meals/${mealId}`}/>
     axios
-      .get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meal.idMeal}`)
+      .get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
       .then((res) => {
         setChosenMeal(mapResponseToMeal(res.data.meals[0]));
       })
