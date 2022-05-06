@@ -1,14 +1,22 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Card from 'react-bootstrap/Card'
 
+import {useParams} from 'react-router-dom'
+
 function MealChoice (props) {
-    const{chosenMeal} = props
+    const{chosenMeal, mealChoice} = props
     console.log(chosenMeal)
+
+    let {id} = useParams()
+
+    useEffect(() => {
+        mealChoice(id)
+    }, [])
+
     return(
         <div>
-            <h1>Hello</h1>
           <div>
-        {chosenMeal.mealId && (
+        {chosenMeal && (
           <div className="chosenMeal">
             <Card>
               <Card.Header>

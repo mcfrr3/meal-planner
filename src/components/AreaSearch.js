@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import Card from 'react-bootstrap/Card'
 import {initialMealChoice} from '../helpers/initialMealChoice'
+import {useNavigate} from 'react-router-dom'
 
 
 /*create a grid of links for all the areas.
@@ -14,6 +15,8 @@ function AreaSearch(props) {
     const [chosenArea, setChosenArea] = useState([])
 
     const {chosenMeal, mealChoice, setChosenMeal, title, setTitle} = props
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         axios
@@ -63,7 +66,7 @@ function AreaSearch(props) {
           {chosenArea.map((meal) => {
             return (
               <div className="categoryMeals" key={meal.idMeal}>
-                <Card onClick={() => mealChoice(meal.idMeal)}>
+                <Card onClick={()=> navigate(`/meals/${meal.idMeal}`)}>
                   <Card.Header>
                     <Card.Title>{meal.strMeal}</Card.Title>
                   </Card.Header>
@@ -79,35 +82,6 @@ function AreaSearch(props) {
           })}
         </div>
       )}
-       <div>
-        {chosenMeal.mealId && (
-          <div className="chosenMeal">
-            <Card>
-              <Card.Header>
-                <Card.Title>GREAT MEAL CHOICE!</Card.Title>
-                <Card.Subtitle>{chosenMeal.mealName}</Card.Subtitle>
-              </Card.Header>
-              <Card.Body>
-                <Card.Img
-                  class="img-thumbnail"
-                  src={`${chosenMeal.thumbnail}/preview`}
-                />
-                <ul>
-                  {chosenMeal.ingredients.map((ingredient, index) => {
-                    return (
-                      <li key={index}>
-                        {ingredient.measure} {ingredient.ingredient}
-                      </li>
-                    );
-                  })}
-                </ul>
-                <h3>Instructions</h3>
-                <p>{chosenMeal.instructions}</p>
-              </Card.Body>
-            </Card>
-          </div>
-        )}
-      </div>
         </div>
     )
 }

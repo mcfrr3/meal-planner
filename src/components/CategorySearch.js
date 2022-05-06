@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "react-bootstrap/Card";
 import {initialMealChoice} from '../helpers/initialMealChoice'
+import {useNavigate} from 'react-router-dom'
 
 
 function CategorySearch(props) {
   const [categories, setCategories] = useState([]);
   const [categoryList, setCategoryList] = useState([]);
+
+  const navigate = useNavigate()
 
   const {mealChoice, chosenMeal, setChosenMeal, title, setTitle} = props
   useEffect(() => {
@@ -62,7 +65,7 @@ console.log(chosenMeal)
           {categoryList.map((meal) => {
             return (
               <div className="categoryMeals" key={meal.idMeal}>
-                <Card onClick={() => mealChoice(meal.idMeal)}>
+                <Card onClick={()=> navigate(`/meals/${meal.idMeal}`)}>
                   <Card.Header>
                     <Card.Title>{meal.strMeal}</Card.Title>
                   </Card.Header>
