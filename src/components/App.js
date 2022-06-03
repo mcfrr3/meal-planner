@@ -39,8 +39,7 @@ function App() {
       });
   };
 
- console.log(title)
- console.log(chosenMeal)
+
 
   return (
           <BrowserRouter>
