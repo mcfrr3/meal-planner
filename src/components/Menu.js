@@ -30,6 +30,7 @@ const Menu =(props) => {
             <Link to='/'  className='nav-link' onClick={handleClose}>Random Meal</Link>
             <Link to= '/categories' className='nav-link' onClick={handleClose}>Category Search</Link>
             <Link to= '/areas' className='nav-link' onClick={handleClose}>Area Search</Link>
+            <Link to = '/api/favoriteRecipes' className='nav-link' onClick={handleClose}>Favorites</Link>
             <Link to = '/api/auth/logout' className='nav-link' onClick={handleClose}>Logout</Link>
           </Offcanvas.Body>
         </Offcanvas>
