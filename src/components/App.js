@@ -39,14 +39,15 @@ function App() {
       });
   };
 
- 
+ console.log(title)
+ console.log(chosenMeal)
 
   return (
           <BrowserRouter>
       <div className="App">
         <Container>
           <Menu show = {show} setShow= {setShow}/>
-        <Navigation setChosenMeal = {setChosenMeal} chosenMeal={chosenMeal} />
+        {/* <Navigation setChosenMeal = {setChosenMeal} chosenMeal={chosenMeal} /> */}
           <Routes>
             <Route path='/' element={<RandomMeal />} />
             <Route path='/categories' element={<CategorySearch  
