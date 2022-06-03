@@ -15,6 +15,7 @@ import CategorySearch from './CategorySearch'
 import AreaSearch from './AreaSearch'
 import MealChoice from './MealChoice';
 import {initialMealChoice} from '../helpers/initialMealChoice'
+import Menu from './Menu'
 
 
 //need to reset title and chosenMeal when moving from one category to another
@@ -22,6 +23,7 @@ import {initialMealChoice} from '../helpers/initialMealChoice'
 function App() {
   const [chosenMeal, setChosenMeal] = useState([initialMealChoice])
   const [title, setTitle] = useState('')
+  const [show, setShow] = useState(false)
 
 
 
@@ -43,7 +45,9 @@ function App() {
           <BrowserRouter>
       <div className="App">
         <Container>
-        <Navigation setChosenMeal = {setChosenMeal} chosenMeal={chosenMeal}/>
+          {/* {'start'} */}
+          <Menu />
+        <Navigation setChosenMeal = {setChosenMeal} chosenMeal={chosenMeal} show = {show} setShow= {setShow}/>
           <Routes>
             <Route path='/' element={<RandomMeal />} />
             <Route path='/categories' element={<CategorySearch  

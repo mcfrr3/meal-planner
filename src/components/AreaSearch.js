@@ -14,7 +14,7 @@ function AreaSearch(props) {
     const [areas, setAreas] = useState([])
     const [chosenArea, setChosenArea] = useState([])
 
-    const {chosenMeal, mealChoice, setChosenMeal, title, setTitle} = props
+    const {setChosenMeal, title, setTitle} = props
 
     const navigate = useNavigate()
 
