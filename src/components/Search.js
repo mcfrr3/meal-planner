@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Card from 'react-bootstrap/Card'
 
+
+// /meal ==randomMeal
+// /meal/idMeal ==-Meal of choice
+
 const initialForm = {
   name: "",
   category: "",

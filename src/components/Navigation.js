@@ -11,7 +11,10 @@ const Navigation = (props) => {
     setTitle('')
     setChosenMeal(initialMealChoice)
   }
+
+
   return (
+
     <Navbar expand="lg">
       <Container>
         <Link to="/">Random Meal</Link>

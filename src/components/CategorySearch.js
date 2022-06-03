@@ -11,7 +11,7 @@ function CategorySearch(props) {
 
   const navigate = useNavigate()
 
-  const {mealChoice, chosenMeal, setChosenMeal, title, setTitle} = props
+  const { setChosenMeal, title, setTitle} = props
   useEffect(() => {
     axios
       .get("https://www.themealdb.com/api/json/v1/1/categories.php")
@@ -37,9 +37,7 @@ function CategorySearch(props) {
         console.log({ err });
       });
   };
-console.log(categories)
-console.log(categoryList)
-console.log(chosenMeal)
+
   return (
     <div>
       <h1>Category Search</h1>
@@ -81,35 +79,6 @@ console.log(chosenMeal)
           })}
         </div>
       )}
-      <div>
-        {chosenMeal.mealId && (
-          <div className="chosenMeal">
-            <Card>
-              <Card.Header>
-                <Card.Title>GREAT MEAL CHOICE!</Card.Title>
-                <Card.Subtitle>{chosenMeal.mealName}</Card.Subtitle>
-              </Card.Header>
-              <Card.Body>
-                <Card.Img
-                  class="img-thumbnail"
-                  src={`${chosenMeal.thumbnail}/preview`}
-                />
-                <ul>
-                  {chosenMeal.ingredients.map((ingredient, index) => {
-                    return (
-                      <li key={index}>
-                        {ingredient.measure} {ingredient.ingredient}
-                      </li>
-                    );
-                  })}
-                </ul>
-                <h3>Instructions</h3>
-                <p>{chosenMeal.instructions}</p>
-              </Card.Body>
-            </Card>
-          </div>
-        )}
-      </div>
     </div>
   );
 }
